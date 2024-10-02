@@ -85,13 +85,13 @@ end
 input = ARGV.join(' ')
 
 if input =~ /[^0-9+\-*\/().\s]/
-  puts "Ошибка: обнаружен некорректный символ."
+  puts "Ви ввели неправильний символ"
 else
   rpn_expression = rpn(input)
   begin
     result = evaluate_rpn(rpn_expression)
     puts "RPN: #{rpn_expression}"
-    puts "Результат: #{result}"
+    puts "Результат обчислення виразу: #{result}"
   rescue ZeroDivisionError => e
     puts e.message
   rescue ArgumentError => e
